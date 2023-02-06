@@ -18,7 +18,7 @@ pipeline{
             }
             stage('Test FrontEnd'){
                 steps{
-                    bat 'cd FrontEnd && yarn test'
+                    bat 'cd FrontEnd && npm test'
                 }
             }
         }
