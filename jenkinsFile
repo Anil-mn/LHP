@@ -13,7 +13,7 @@ pipeline{
             }
             stage('Test Backend'){
                 steps{
-                    bat 'cd Backend && npm jest'
+                    bat 'cd Backend && jest'
                 }
             }
             stage('Test FrontEnd'){
