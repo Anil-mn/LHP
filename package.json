@@ -8,7 +8,7 @@
     "server": "cd BackEnd && node index.js",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "cd FrontEnd && npm run build",
-    "test": "cd BackEnd && jest",
+    "test": "cd BackEnd && jest --forceExit",
     "front": "cd FrontEnd && npm test"
   },
   "dependencies": {
