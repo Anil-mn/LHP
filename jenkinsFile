@@ -8,7 +8,7 @@ pipeline{
             }
             stage('Build front-end'){
                 steps{
-                    bat 'cd Backend && npm install'
+                    bat 'cd FrontEnd && npm install'
                 }
             }
             stage('Test Backend'){
