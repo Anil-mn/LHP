@@ -3,7 +3,7 @@ pipeline{
         stages{
             stage('Build Backend'){
                 steps{
-                    bat 'cd Backend && npm install'
+                    bat 'npm install'
                 }
             }
             stage('Build front-end'){
@@ -13,12 +13,12 @@ pipeline{
             }
             stage('Test Backend'){
                 steps{
-                    bat 'cd Backend && jest'
+                    bat 'npm run test'
                 }
             }
             stage('Test FrontEnd'){
                 steps{
-                    bat 'cd FrontEnd && npm test'
+                    bat 'npm run front'
                 }
             }
         }
