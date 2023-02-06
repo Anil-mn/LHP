@@ -16,6 +16,11 @@ pipeline{
                     bat 'npm run test'
                 }
             }
+             stage('Build Front End'){
+                steps{
+                    bat 'npm run build'
+                }
+            }
             stage('Test FrontEnd'){
                 steps{
                     bat 'cd FrontEnd && npm test'
