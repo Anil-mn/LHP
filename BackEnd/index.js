@@ -41,8 +41,8 @@ mongoose.connect(process.env.DATABASE, {
     // });
     
 
-// app.use("/api", adminAuthRoutes);
-// app.use("/api", adminHomeRoutes);
+app.use("/api", adminAuthRoutes);
+app.use("/api", adminHomeRoutes);
 
 const port = process.env.PORT;
 app.listen(port,()=>{
