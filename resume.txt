@@ -1,12 +1,11 @@
-Project management expertise: oversee project work stream deliverables including quality control/ Sign off 
-Testing : Experience in Unit testing BA testing and system testing 
-Doing data analysis by writing SQL queries
+MYSQL
 
-Filtering and generating data from SQL for Data Analysis.
-Performing manual and automation testing.Working as client support and 
-client-facing experience. 
-Evaluate testing process, 
-make recommendations as necessary Maintained 
-detailed and accurate progress records to enable aggregate performance and issue tracking. 
+docker pull MYSQL:latest -> Adding docker image to local
 
+docker run --name your-container-name -e MYSQL_ROOT_PASSWORD=<yourPassword> -e MYSQL_USER=<newUSer>
+-e MYSQL_Password = <userPassword> -d mysql 
 
+    -e --> Enviroment variable 
+    -d --> run container and display index
+
+docker run -it <container_name> mysql -uroot -p

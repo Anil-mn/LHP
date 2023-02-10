@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import '../../css/Login.css';
+import { login } from '../../methods/auth';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (event) => {
+  const [values, setValues] = useState({
+    email:'',
+    password:''
+  })
+ const {email, password} = values;
+  
+  
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Username: ${username} Password: ${password}`);
+    console.log({values})
+    await login({email, password}).then(data =>{
+      console.log(data)
+      if(data.error){
+        console.log(data.error)
+      }else{
+        console.log('success')
+      }
+    }).catch(console.log('Faild'))
+    console.log(`email: ${email} Password: ${password}`);
   };
 
   return (
@@ -16,19 +30,21 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Phone number, email, or username"
-          value={username}
-          onChange={(event) => setUsername(event.target.value)}
+          placeholder="Phone number, email, or email"
+          value={email}
+          onChange={(event) => setValues({email: event.target.value})}
           required
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(event) => setPassword(event.target.value)}
+          onChange={(event) => setValues({...values,password: event.target.value})}
           required
         />
-        <button type="submit">Log in</button>
+        <button type="submit" onClick= {handleSubmit}>
+          Log in
+          </button>
         <p>Forgot password?</p>
       </form>
       <hr />
